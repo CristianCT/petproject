@@ -18,7 +18,7 @@ public class UserDTO {
         this.name = name;
         this.email = email;
         this.password = password;
-        this.projects = new ArrayList();
+        this.projects = new ArrayList<ProjectDTO>();
     }
 
     public UserDTO(String id, String name, String email, String password, ArrayList<ProjectDTO> projects) {

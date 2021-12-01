@@ -1,14 +1,14 @@
 package com.sofkau.fullstack.backend.DTOs;
 
-public class ActivitieDTO {
+public class ActivityDTO {
 
     private String name;
     private Boolean completed;
 
-    public ActivitieDTO() {
+    public ActivityDTO() {
     }
 
-    public ActivitieDTO(String name, Boolean completed) {
+    public ActivityDTO(String name, Boolean completed) {
         this.name = name;
         this.completed = completed;
     }

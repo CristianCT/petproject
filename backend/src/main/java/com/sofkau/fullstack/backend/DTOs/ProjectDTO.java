@@ -5,17 +5,17 @@ import java.util.ArrayList;
 public class ProjectDTO {
 
     private String name;
-    private ArrayList<ActivitieDTO> activities;
+    private ArrayList<ActivityDTO> activities;
 
     public ProjectDTO() {
     }
 
     public ProjectDTO(String name) {
         this.name = name;
-        this.activities = new ArrayList();
+        this.activities = new ArrayList<ActivityDTO>();
     }
 
-    public ProjectDTO(String name, ArrayList<ActivitieDTO> activities) {
+    public ProjectDTO(String name, ArrayList<ActivityDTO> activities) {
         this.name = name;
         this.activities = activities;
     }
@@ -28,15 +28,15 @@ public class ProjectDTO {
         this.name = name;
     }
 
-    public ArrayList<ActivitieDTO> getActivities() {
+    public ArrayList<ActivityDTO> getActivities() {
         return activities;
     }
 
-    public void setActivities(ArrayList<ActivitieDTO> activities) {
+    public void setActivities(ArrayList<ActivityDTO> activities) {
         this.activities = activities;
     }
 
-    public void addActivitie(ActivitieDTO activitie){
-        this.activities.add(activitie);
+    public void addActivity(ActivityDTO activityDTO){
+        this.activities.add(activityDTO);
     }
 }
