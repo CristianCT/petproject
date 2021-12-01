@@ -1,36 +1,27 @@
-package com.sofkau.fullstack.backend.models;
-
-import com.sofkau.fullstack.backend.DTOs.ProjectDTO;
-import org.bson.types.ObjectId;
-import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.Document;
-import org.springframework.data.mongodb.core.mapping.MongoId;
+package com.sofkau.fullstack.backend.DTOs;
 
 import java.util.ArrayList;
 
-@Document(collection = "users")
-public class UserModel {
+public class UserDTO {
 
-    @Id
     private String id;
-
     private String name;
     private String email;
     private String password;
-
     private ArrayList<ProjectDTO> projects;
 
-    public UserModel() {
+    public UserDTO() {
     }
 
-    public UserModel(String name, String email, String password) {
+    public UserDTO(String id, String name, String email, String password) {
         this.id = id;
         this.name = name;
         this.email = email;
         this.password = password;
+        this.projects = new ArrayList();
     }
 
-    public UserModel(String id, String name, String email, String password, ArrayList<ProjectDTO> projects) {
+    public UserDTO(String id, String name, String email, String password, ArrayList<ProjectDTO> projects) {
         this.id = id;
         this.name = name;
         this.email = email;
@@ -76,5 +67,9 @@ public class UserModel {
 
     public void setProjects(ArrayList<ProjectDTO> projects) {
         this.projects = projects;
+    }
+
+    public void addProject(ProjectDTO project) {
+        this.projects.add(project);
     }
 }

@@ -1,5 +1,6 @@
 package com.sofkau.fullstack.backend.controllers;
 
+import com.sofkau.fullstack.backend.DTOs.UserDTO;
 import com.sofkau.fullstack.backend.models.UserModel;
 import com.sofkau.fullstack.backend.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,13 +15,28 @@ public class UserController {
     @Autowired
     private UserService userService;
 
-    @GetMapping
-    public ArrayList<UserModel> list(){
-        return userService.list();
+    @GetMapping("/{id}")
+    public UserDTO getById(@PathVariable("id") String id){
+        return userService.getById(id);
     }
 
     @PostMapping
-    public UserModel save(@RequestBody UserModel userModel){
-        return userService.save(userModel);
+    public UserDTO save(@RequestBody UserDTO userDTO){
+        return userService.save(userDTO);
+    }
+
+    @PutMapping("/{id}")
+    public UserDTO update(@PathVariable("id") String id, @RequestBody UserDTO userDTO){
+        return userService.update(id, userDTO);
+    }
+
+    @DeleteMapping("/{id}")
+    public String delete(@PathVariable("id") String id){
+        UserDTO user = userService.getById(id);
+        if(user != null){
+            userService.delete(user);
+            return "User deleted";
+        }
+        return "User not found";
     }
 }
