@@ -7,7 +7,7 @@ import {
         ELIMINAR_PROYECTO
         } from '../../types/index';
 
-export default (state, action) => {
+const proyectoReducer = (state, action) => {
     switch (action.type) {
         case FORMULARIO_PROYECTO:
             return {
@@ -23,7 +23,8 @@ export default (state, action) => {
             return {
                 ...state,
                 proyectos: [...state.proyectos, action.payload],
-                formulario: false
+                formulario: false,
+                errorformulario: false
             }
         case VALIDAR_FORMULARIO:
             return {
@@ -44,4 +45,6 @@ export default (state, action) => {
         default:
             return state;
     }
-}
+} 
+
+export default proyectoReducer;
