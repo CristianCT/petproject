@@ -18,6 +18,11 @@ public class ActivityModel {
     public ActivityModel() {
     }
 
+    public ActivityModel(String name) {
+        this.name = name;
+        this.completed = false;
+    }
+
     public ActivityModel(String name, Boolean completed) {
         this.name = name;
         this.completed = completed;
