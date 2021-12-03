@@ -9,9 +9,9 @@ import ProyectoState from './context/proyectos/proyectoState'
 import TareaState from './context/tareas/tareaState';
 import AlertaState from './context/alertas/alertaState';
 
-const HOST_API = "http://localhost:4000";
 
 function App() {
+
   return (
     <ProyectoState>
       <TareaState>
